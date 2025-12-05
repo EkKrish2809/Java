@@ -1,0 +1,153 @@
+Top-N per group
+
+Task: From a list of Employee(id,name,dept,salary) return top 3 highest-paid employees per department.
+Tests: groupingBy, downstream collectors, Comparator, collectingAndThen, limiting.
+Difficulty: Medium
+Aggregate multiple stats per group
+
+Task: For each department compute count, average, min, max salary in one pass.
+Tests: summarizingDouble, groupingBy with summarizing collector, collectors composition.
+Difficulty: Medium
+Partition and map
+
+Task: Partition employees into high (>75k) and low salary, map each partition to sorted list of names.
+Tests: partitioningBy, mapping, sorted, collectors.
+Difficulty: Medium
+Stable multi-criteria sort
+
+Task: Sort list of Persons by lastName asc, firstName asc, age desc. Preserve original order for ties.
+Tests: Comparator.thenComparing, Comparator.comparingInt, stream.sorted, stable sort behavior.
+Difficulty: Medium
+Distinct by property
+
+Task: Remove duplicates by email (first occurrence retained). Return list in original encounter order.
+Tests: distinct property (use LinkedHashMap or custom predicate), stateful filter, side-effects.
+Difficulty: Medium
+Merge and dedupe streams
+
+Task: Merge two streams of Strings, remove case-insensitive duplicates, preserve first seen order.
+Tests: Stream.concat, custom comparator for dedupe, collect with LinkedHashSet.
+Difficulty: Medium
+Custom collector: top N globally
+
+Task: Implement Collector to keep top N largest integers from a stream in O(n log N).
+Tests: Collector.of, supplier/accumulator/combiner/finisher, parallel-safety.
+Difficulty: Hard
+Sliding window aggregation
+
+Task: Given a stream of ints, compute moving average of window size k and emit stream of averages.
+Tests: stateful mapping, custom Spliterator or use IntStream with deque, lazy evaluation.
+Difficulty: Hard
+Stream zip
+
+Task: Implement zip(streamA, streamB, BiFunction) producing combined stream until shortest exhausted.
+Tests: Spliterator, iterators, laziness.
+Difficulty: Hard
+File-processing pipeline
+
+Task: Read large log file, filter lines with ERROR, extract timestamp and message, group counts per hour.
+Tests: Files.lines (stream), try-with-resources, map/filter, DateTime parsing, groupingByConcurrent.
+Difficulty: Medium
+Parallel stream pitfalls
+
+Task: Show bug when collecting into non-thread-safe list in parallel; fix by using Concurrent collector.
+Tests: parallel(), collect with synchronized/Concurrent collectors, race conditions, performance.
+Difficulty: Medium
+Reduce with non-associative function
+
+Task: Demonstrate why subtraction in reduce is incorrect in parallel and fix to use mutable reduction.
+Tests: reduce vs collect, associative operation requirement.
+Difficulty: Medium
+Stream of optionals flattening
+
+Task: Given Stream<Optional<T>> produce Stream<T> skipping empty optionals.
+Tests: flatMap(Optional::stream), Java 9+ Optional.stream.
+Difficulty: Easy
+Safe map key collision handling
+
+Task: Convert list of users to Map<id, user>; for duplicate ids keep latest by timestamp.
+Tests: Collectors.toMap with merge function, Comparator, keeping last.
+Difficulty: Medium
+Grouping with ordered buckets
+
+Task: Group words by first letter into a TreeMap<char, List<String>> with lists sorted alphabetically.
+Tests: groupingBy with supplier, mapping+sorted, TreeMap ordering.
+Difficulty: Medium
+Count distinct n-grams
+
+Task: Given a large text stream, produce frequency map of distinct 3-word sequences (trigrams).
+Tests: sliding window via buffer, map/reduce, memory considerations.
+Difficulty: Hard
+Laziness and short-circuiting demonstration
+
+Task: Show that findFirst/anyMatch short-circuit and that peek executes lazily; measure calls.
+Tests: side-effects, terminal operations, stream pipeline behavior.
+Difficulty: Easy
+Collect into custom immutable structure
+
+Task: Collect stream of integers into a custom immutable Histogram class (bucket counts) via a collector.
+Tests: Collector finisher producing immutable result, combining for parallel.
+Difficulty: Hard
+Nested grouping and transformation
+
+Task: Group orders by customer, then by month, and in each group compute total order value and list of orderIds.
+Tests: nested groupingBy, mapping, summarizing, collectingAndThen.
+Difficulty: Medium
+Convert recursive tree to flat stream
+
+Task: Given a tree of nodes, produce stream of nodes in pre-order using Stream API (no explicit recursion in consumer).
+Tests: flatMap, Stream.concat, custom helper to convert node->stream, laziness considerations.
+Difficulty: Medium/Hard
+Stream-based topological sort (DAG)
+
+Task: Given list of edges, produce topological ordering using Streams for pipelines (core logic may still be imperative).
+Tests: graph algorithms, combining Streams with imperative control, performance.
+Difficulty: Hard
+Rate-limited processing with streams
+
+Task: Process a stream of events at maximum X events/sec (throttling) using stream constructs.
+Tests: time-based operations, blocking/pausing in stream, Spliterator.
+Difficulty: Hard
+Exception handling in pipelines
+
+Task: Build stream pipeline that handles checked exceptions when mapping IO operations, collecting successes and failures separately.
+Tests: wrapper functions, Either-like result, partitioningBy success/failure.
+Difficulty: Medium
+Windowed join of two sorted streams
+
+Task: Given two time-ordered streams, join events within ±delta time window into pairs.
+Tests: two-pointer technique, stateful processing, memory constraints, Spliterator.
+Difficulty: Hard
+Memory-efficient distinct by key for huge streams
+
+Task: Implement distinctByKey for potentially huge streams with limited memory (approx. using Bloom filter).
+Tests: probabilistic data structures, streaming algorithms, false positives discussion.
+Difficulty: Hard
+
+
+
+//////////////////////////////
+what is the difference between NoClassDefFoundError and ClassNotFoundException?
+ 
+What is the difference between creating String as new() and literal?
+ 
+Describe and compare fail-fast and fail-safe iterators. Give examples.
+
+ 
+Metaspace and permGen
+ 
+jjs
+ 
+Nashorn
+ 
+Describe the new Date and Time API in Java 8. How does it address the shortcomings of the older java.util.Date and java.util.Calendar?
+
+ 
+What improvements does Java 8 offer for multithreading and concurrency over its predecessors? Specifically, discuss enhancements in ConcurrentHashMap and CompletableFuture.
+
+ 
+Given a String, find the first non-repeated character in it using Stream functions?
+
+ 
+for eg : aaddfghfhj output would be g
+ 

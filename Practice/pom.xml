@@ -1,0 +1,6 @@
+<!-- Maven example -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version> <!-- Use the appropriate version -->
+        </dependency>

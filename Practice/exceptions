@@ -1,0 +1,16 @@
+Syntax error
+Logical error
+Runtime error
+
+> Runtime exception
+        ArithmeticException -> eg. divide by 0
+         
+
+
+{
+    Every library class as well as custom implemented class by default extends Object class
+
+    try with resource -> to assure the auto closing/releasing of the object if
+            try{} block fails.
+            It extends AutoClosable interface. (has close() method)
+}

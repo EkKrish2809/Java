@@ -1,0 +1,14 @@
+What is functional interface ?
+-> Functional interface is one of the Java 8 feature which follows the functional way of programming.
+    Functional interface contains only one Abstract method. It can have default methods and static methods
+    for some default response or backward compatibility.
+    If you are implementing the functional interface, you must implement the only abstract method from it.
+    We can create a custom Functional Interface as well by creating a class with @FunctionalInterface and 
+    declaring one abstract method in it.
+    Java 8 also provides its own functional interface e.g. Function, Predicate, Runnable, Consumer, Supplier
+    > Function takes one parameter and returns an output after processing the parameter
+        It has abstract method named apply()
+        There is also BiFunctiona interface which takes 2 parameters and returns an output.
+    > Predicate takes one parameter and tests the parameter as a condition and returns true or false.
+    > Runnable is an interface which is used for thread creation, it has run() methode which runs the thread
+        

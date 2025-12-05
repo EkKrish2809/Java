@@ -1,0 +1,12 @@
+Java Bean is just a Java class,  but it should follow 3 main properties
+1. that java class should have getters() and setters() to access the properties
+2. that class should have 'public no args constructor', so that anybody can create an object of it
+3. that class should implement Serializable, (beacuse java beans can be required to exported, may be 
+    required to written to a database, or to a file system, or converted to JSON or XML doc to sent 
+    over the network and again being Deserialized)
+
+
+Spring Boot vs Spring MVC
+> In Spring MVC, we actually render the web components using HTML, JSP
+ whereas in Spring Boot we do not render directly on Web, instead we create response which is then used by 
+ frontend technology to render UI
